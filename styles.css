@@ -3,28 +3,84 @@
     margin: 0;
 }
 
+body {
+    background-color: rgb(22, 22, 22);
+}
+
 .banner {
     grid-area: banner;
     height: 5vh;
+    border: 5px solid black;
+    color: rgb(201, 201, 201);
+    background-color: rgb(22, 22, 22);
+    border-radius: 0px 0px 150px 150px;
 }
+
+h1 {
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+}
+
+h3 {
+    letter-spacing: 0.2em;
+}
+
 .tabs {
     grid-area: tabs;
-    height: 81.1vh;
+    height: 83.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.main {grid-area: main;}
+
+.tabs > .tab {
+    border: 5px solid black;
+    border-radius: 0px 50px 50px 0px;
+    font-size: 1em;
+    width: 100%;
+    height: 15%;
+    background-color: rgb(22, 22, 22);
+    color: rgb(201, 201, 201);
+    letter-spacing: 0.2em;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: main;
+}
+
+.main > .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    border: 5px solid black;
+    background-color: rgb(22, 22, 22);
+    color: rgb(201, 201, 201);
+    border-radius: 1em;
+}
+
+.container > button {
+    background-color: rgb(22, 22, 22);
+    color: rgb(201, 201, 201);
+    letter-spacing: 0.2em;
+    height: 3em;
+
+}
 
 .grid-container {
     display: grid;
     grid-template-areas:
-    'banner banner banner banner banner banner'
-    'tabs main main main main main';
-    gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
+    'banner banner banner banner banner banner banner banner banner banner'
+    'tabs main main main main main main main main main';
+    background-color: rgb(43, 43, 43);
 }
 
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
