@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.banner {
+    grid-area: banner;
+    height: 5vh;
+}
+.tabs {
+    grid-area: tabs;
+    height: 81.1vh;
+}
+.main {grid-area: main;}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'banner banner banner banner banner banner'
+    'tabs main main main main main';
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
