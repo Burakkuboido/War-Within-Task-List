@@ -10,7 +10,7 @@
     <div class="grid-container">
         <div class="banner"><h1>The War Within</h1></div>
         <div class="tabs">
-            <button class="tab selected">Daily</button>
+            <button class="tab">Daily</button>
             <button class="tab">Weekly</button>
             <button class="tab">Achievements</button>
             <button class="tab">Instances</button>
@@ -18,13 +18,16 @@
         </div>
         <div class="main">
             <div class="container">
-                <h3 class="title">Daily</h3>
-                <button class="addCategory">ADD CATEGORY</button>
-                <button class="addTask">ADD TASK</button>
+                <h3 id="title"></h3>
+                <button class="addCategory" onclick="addCat()">ADD CATEGORY</button>
+                <button class="addTask" onclick="addTask()">ADD TASK</button>
+                <ul id="listContainer">
+                </ul>
             </div>
         </div>
 
     </div>
     
 </body>
+<script src="/script.js"></script>
 </html>

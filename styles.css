@@ -43,6 +43,36 @@ h3 {
     letter-spacing: 0.2em;
 }
 
+h5 {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    font-size: 24px;
+    padding: 5px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+  }
+
+  span:hover,
+  li:hover {
+    cursor: pointer;
+    background-color: rgb(37, 37, 37);
+  }
+
+/* Tab Section Styles */
+
 .tabs {
     grid-area: tabs;
     height: 83.5vh;
@@ -60,7 +90,7 @@ h3 {
     height: 15%;
     background-color: rgb(22, 22, 22);
     color: rgb(201, 201, 201);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     z-index: 2;
     text-align: center;
 }
@@ -69,10 +99,32 @@ h3 {
     width: 80%;
     background-color: rgb(201, 201, 201);
     color: black;
+    animation: run 0.1s linear;
+    font-weight: bold;
+}
+
+@keyframes run {
+    0% {
+        width: 70%
+    }
+    100% {
+        width: 80%;
+    }
 }
 
 .tab:hover {
-    background-color: black;
+    background-color: rgb(201, 201, 201);
+    color: black;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* Main Section Styles */
+
+.hidden {
+    visibility: hidden;
 }
 
 .main {
@@ -102,7 +154,7 @@ h3 {
 }
 
 .container > button:hover {
-    color: black;
+    color: white;
     background-color: rgb(201,201,201);
 }
 
