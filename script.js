@@ -1,8 +1,26 @@
 container = document.getElementsByClassName('container')[0];
 document.querySelectorAll('.tab').forEach(item => {
     item.addEventListener('click', event => {
-        title.innerHTML = event.target.innerHTML;
 
+        switch(event.target.innerHTML) {
+            case "Daily":
+                document.getElementById('listContainer').innerHTML = localStorage.getItem("daily");
+              break;
+            case "Weekly":
+                document.getElementById('listContainer').innerHTML = localStorage.getItem("weekly");
+              break;
+            case "Achievements":
+                document.getElementById('listContainer').innerHTML = localStorage.getItem("achievements");
+                break;
+            case "Instances":
+                document.getElementById('listContainer').innerHTML = localStorage.getItem("instances");
+                break;
+            case "Collections":
+                document.getElementById('listContainer').innerHTML = localStorage.getItem("collections");
+                break;
+          }
+
+        title.innerHTML = event.target.innerHTML;
 
         for(i = 0; i < 5; i++) {
             tabs = document.getElementsByClassName('tab')[i];
@@ -12,13 +30,13 @@ document.querySelectorAll('.tab').forEach(item => {
         if(event.target.classList.contains('selected')){
             container.classList.remove('hidden');
         }
+        grabListElements();
     })
   })
-showTask();
-grabListElements();
 
 
 listContainer = document.getElementById('listContainer');
+
 
 function addCat() {
     let cat = prompt("Add Category");
@@ -35,7 +53,7 @@ if (cat == "" || cat == null) {
     span.classList.add("hide");
     grabListElements();
 }
-saveData();
+myfunc();
 }
 
 function grabListElements() {
@@ -66,7 +84,7 @@ function addTask() {
         span.innerHTML = "\u00d7"
         li.appendChild(span);
     }
-    saveData();
+    myfunc();
 }
 
 
@@ -77,7 +95,7 @@ listContainer.addEventListener("click", function(e) {
     } else if(e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
     }
-    saveData();
+    myfunc();
 }, false);
 
 
@@ -92,7 +110,6 @@ function getListElements(){
         li[x].onmousedown = pickItem;
         li[x].onmouseover = moveItem;
 }
-    saveData();
 }
 
 
@@ -148,10 +165,71 @@ function dropItem () {
 
 
 
-function saveData() {
+function saveDaily() {
     localStorage.setItem("daily", listContainer.innerHTML);
 }
 
-function showTask(){
+function showDaily(){
     listContainer.innerHTML = localStorage.getItem("daily");
+}
+
+
+
+function saveWeekly() {
+    localStorage.setItem("weekly", listContainer.innerHTML);
+}
+
+function showWeekly() {
+    listContainer.innerHTML = localStorage.getItem("weekly");
+}
+
+
+
+function saveAchievements() {
+    localStorage.setItem("achievements", listContainer.innerHTML);
+}
+
+function showAchievements() {
+    listContainer.innerHTML = localStorage.getItem("achievements");
+}
+
+
+
+function saveInstances() {
+    localStorage.setItem("instances", listContainer.innerHTML);
+}
+
+function showInstances() {
+    listContainer.innerHTML = localStorage.getItem("instances");
+}
+
+
+
+function saveCollections() {
+    localStorage.setItem("collections", listContainer.innerHTML);
+}
+
+function showCollections() {
+    listContainer.innerHTML = localStorage.getItem("collections");
+}
+
+title = document.getElementById('title');
+function myfunc() {
+    switch(title.innerHTML) {
+        case "Daily":
+            localStorage.setItem("daily", listContainer.innerHTML);
+          break;
+        case "Weekly":
+            localStorage.setItem("weekly", listContainer.innerHTML);
+          break;
+        case "Achievements":
+            localStorage.setItem("achievements", listContainer.innerHTML);
+            break;
+        case "Instances":
+            localStorage.setItem("instances", listContainer.innerHTML);
+            break;
+        case "Collections":
+            localStorage.setItem("collections", listContainer.innerHTML);
+            break;
+      }
 }
