@@ -34,7 +34,6 @@ document.querySelectorAll('.tab').forEach(item => {
     })
   })
 
-
 listContainer = document.getElementById('listContainer');
 
 
@@ -110,6 +109,7 @@ function getListElements(){
         li[x].onmousedown = pickItem;
         li[x].onmouseover = moveItem;
 }
+myfunc();
 }
 
 
