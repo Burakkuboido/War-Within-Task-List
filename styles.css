@@ -4,12 +4,10 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
-    max-height: 100%;
     font-family: "Mate", serif;
 }
 
 body {
-    background-color: rgb(22, 22, 22);
     min-height: 100vh;
 }
 
@@ -18,8 +16,11 @@ body {
     top: -20px;
     height: 5vh;
     border: 5px solid black;
-    color: rgb(201, 201, 201);
-    background-color: rgb(22, 22, 22);
+    color: rgb(0, 0, 0);
+    background: 
+     linear-gradient(rgba(24,34,35,0.6) 0%, rgba(24,34,35,0.6) 59%, rgba(24,34,35,0.6)),
+     url('/images/Rock.jpg') repeat;
+    box-shadow: 5px 10px 30px 8px #000000;
     border-radius: 0px 0px 150px 150px;
     animation: mymove 2s infinite;
     animation-iteration-count: 1;
@@ -42,12 +43,24 @@ h1 {
     letter-spacing: 0.2em;
 }
 
-h3 {
+h2 {
     letter-spacing: 0.2em;
-    display: inline-block;
+
 }
 
-h5:hover {
+h3 {
+    letter-spacing: 0.2em;
+    font-size: 42px;
+    text-decoration: underline 1px white;
+}
+
+h4 {
+    letter-spacing: 0.2em;
+    font-size: 24px;
+}
+
+h5:hover,
+h4:hover {
     cursor: pointer;
 }
 
@@ -63,7 +76,7 @@ li {
     flex-direction: row;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: 1.5em;
+    margin-top: 0.2em;
     font-size: 24px;
     padding: 5px;
 }
@@ -86,9 +99,10 @@ ul li.checked {
   #listContainer {
     overflow: scroll;
     width: 100%;
-    height: 18em;
-    overflow-x: hidden;
+    height: 85%;
     scrollbar-color: black rgb(36, 36, 36);
+    padding-top:  3.5em;
+    padding-bottom: 3.5em;
   }
 
 /* Tab Section Styles */
@@ -108,8 +122,12 @@ ul li.checked {
     font-size: 1em;
     width: 70%;
     height: 15%;
-    background-color: rgb(22, 22, 22);
-    color: rgb(201, 201, 201);
+    
+    color: rgb(0, 0, 0);
+    background: 
+     linear-gradient(rgba(24,34,35,0.6) 0%, rgba(24,34,35,0.6) 59%, rgba(24,34,35,0.6)),
+     url('/images/Rock.jpg') repeat;
+    font-weight: bolder;
     letter-spacing: 0.1em;
     z-index: 2;
     text-align: center;
@@ -141,45 +159,71 @@ ul li.checked {
     visibility: hidden;
 }
 
+
+
 /* Main Section Styles */
 
 .hidden {
     visibility: hidden;
 }
 
-.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    grid-area: main;
-    position: relative;
+.noDisplay {
+    display: none !important;
 }
 
-.main > .container {
+
+.main {
     display: flex;
     flex-direction: column;
-    min-height: 95%;
-    max-height: 95%;
-    width: 90%;
-    border: 5px solid black;
-    background-color: rgb(22, 22, 22);
-    color: rgb(201, 201, 201);
+    grid-area: main;
+    color: white;
     border-radius: 1em;
+    width: 65%;
+    height: 70%;
+    top: 4.5em;
+    left: 20%;
     position: absolute;
 }
 
-.container > button {
-    background-color: rgb(22, 22, 22);
-    color: rgb(201, 201, 201);
-    letter-spacing: 0.2em;
+.containerTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: 3em;
 }
 
-.container > button:hover {
+.containerBot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.containerTop > button,
+.containerBot > button {
+    padding: 1em;
+    background-color: rgb(22, 22, 22);
+    color: black;
+    letter-spacing: 0.2em;
+    height: 4em;
+}
+
+.containerTop > button:hover,
+.containerBot > button:hover {
     color: white;
     background-color: rgb(56, 56, 56);
 }
+
 
 .noSelect {
     -webkit-touch-callout: none;
@@ -187,6 +231,7 @@ ul li.checked {
     -moz-user-select: none;
     user-select: none;
   }/*# sourceMappingURL=index.css.map */
+
 
   .noSelect:hover {
     cursor: pointer;
@@ -198,6 +243,10 @@ ul li.checked {
     'banner banner banner banner banner banner banner'
     'tabs main main main main main main';
     background-color: rgb(30, 30, 30);
+    background-image: url('/images/Cave.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .grid-container > div {

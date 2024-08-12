@@ -1,4 +1,4 @@
-container = document.getElementsByClassName('container')[0];
+container = document.getElementsByClassName('main')[0];
 document.querySelectorAll('.tab').forEach(item => {
     item.addEventListener('click', event => {
 
@@ -21,7 +21,6 @@ document.querySelectorAll('.tab').forEach(item => {
           }
 
         title.innerHTML = event.target.innerHTML;
-
         for(i = 0; i < 5; i++) {
             tabs = document.getElementsByClassName('tab')[i];
             tabs.classList.remove("selected");
@@ -29,6 +28,7 @@ document.querySelectorAll('.tab').forEach(item => {
         event.target.classList.add("selected");
         if(event.target.classList.contains('selected')){
             container.classList.remove('hidden');
+            document.getElementsByClassName("containerTop")[0].classList.remove("hidden");
         }
         grabListElements();
     })
@@ -36,13 +36,27 @@ document.querySelectorAll('.tab').forEach(item => {
 
 listContainer = document.getElementById('listContainer');
 
+function showButtons() {
+    getContainer = document.getElementsByClassName('containerBot')[0];
+    plusBtn = document.getElementsByClassName('showButtons')[0];
+    if(plusBtn.classList.contains("fa-plus")) {
+        getContainer.classList.remove('noDisplay');
+        plusBtn.classList.remove("fa-plus")
+        plusBtn.classList.add("fa-minus")
+    } else {
+        getContainer.classList.add('noDisplay');
+        plusBtn.classList.add("fa-plus")
+        plusBtn.classList.remove("fa-minus")
+    }
+}
+
 
 function addCat() {
     let cat = prompt("Add Category");
 if (cat == "" || cat == null) {
     alert("Did you forget to type something in? Or are you just wasting my time?")
 } else {
-    let header = document.createElement("h5");
+    let header = document.createElement("h3");
     header.innerHTML = cat;
     listContainer.appendChild(header);
     header.classList.add("list");
@@ -53,6 +67,33 @@ if (cat == "" || cat == null) {
     grabListElements();
 }
 myfunc();
+}
+
+
+function addSubCat() {
+    let subCat = prompt("Add Category");
+if (subCat == "" || subCat == null) {
+    alert("Did you forget to type something in? Or are you just wasting my time?")
+} else {
+    let header = document.createElement("h4");
+    header.innerHTML = subCat;
+    listContainer.appendChild(header);
+    header.classList.add("list");
+    let span = document.createElement("span");
+    span.innerHTML = "\u00d7"
+    header.appendChild(span);
+    span.classList.add("hide");
+    grabListElements();
+}
+myfunc();
+}
+
+function uncheckAll() {
+    liElements = document.getElementsByTagName("li");
+    for(x = 0; x < liElements.length; x++) {
+        if(liElements[x].classList.contains("checked") === true)
+            liElements[x].classList.remove("checked");
+    }
 }
 
 function grabListElements() {
@@ -99,16 +140,21 @@ listContainer.addEventListener("click", function(e) {
 
 
 function getListElements(){
-    var h5 = listContainer.getElementsByTagName("h5");
-    for (let x = 0; x < h5.length; x++) {
-        h5[x].onmousedown = pickItem;
-        h5[x].onmouseover = moveItem;
+    var h3 = listContainer.getElementsByTagName("h3");
+    for (let x = 0; x < h3.length; x++) {
+        h3[x].onmousedown = pickItem;
+        h3[x].onmouseover = moveItem;
     }
     var li = listContainer.getElementsByTagName("li");
     for (let x = 0; x < li.length; x++) {
         li[x].onmousedown = pickItem;
         li[x].onmouseover = moveItem;
-}
+    }
+    var h4 = listContainer.getElementsByTagName("h4");
+    for (let x = 0; x < h4.length; x++) {
+        h4[x].onmousedown = pickItem;
+        h4[x].onmouseover = moveItem;
+    }
 myfunc();
 }
 

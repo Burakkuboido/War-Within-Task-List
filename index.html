@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/7812bed04d.js" crossorigin="anonymous"></script>
     <title>War Within Tasklist</title>
 </head>
 <body>
@@ -17,14 +18,23 @@
             <button class="tab">Collections</button>
         </div>
         <div class="main">
-            <div class="container">
-                <h3 id="title"></h3>
+            <div class="containerTop hidden">
+                <h2 id="title"></h2>
+                <button class="uncheckAll" onclick="uncheckAll()">Uncheck All</button>
+                <button onclick="showButtons()"><i class="fa-solid fa-plus showButtons"></i></button>
+
+            </div>
+            <div class="containerBot noDisplay">
                 <button class="addCategory" onclick="addCat()">ADD CATEGORY</button>
+                <button class="addSubCat" onclick="addSubCat()">ADD SUB-CATEGORY</button>
                 <button class="addTask" onclick="addTask()">ADD TASK</button>
+            </div>
+            <div class="list">
                 <ul id="listContainer">
                 </ul>
             </div>
         </div>
+    </div>
 
     </div>
     
