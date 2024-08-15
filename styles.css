@@ -19,7 +19,7 @@ body {
     color: rgb(0, 0, 0);
     background: 
      linear-gradient(rgba(24,34,35,0.6) 0%, rgba(24,34,35,0.6) 59%, rgba(24,34,35,0.6)),
-     url('images/Rock.jpg') repeat;
+     url('/images/Rock.jpg') repeat;
     box-shadow: 5px 10px 30px 8px #000000;
     border-radius: 0px 0px 150px 150px;
     animation: mymove 2s infinite;
@@ -126,7 +126,7 @@ ul li.checked {
     color: rgb(0, 0, 0);
     background: 
      linear-gradient(rgba(24,34,35,0.6) 0%, rgba(24,34,35,0.6) 59%, rgba(24,34,35,0.6)),
-     url('images/Rock.jpg') repeat;
+     url('/images/Rock.jpg') repeat;
     font-weight: bolder;
     letter-spacing: 0.1em;
     z-index: 2;
@@ -243,7 +243,7 @@ ul li.checked {
     'banner banner banner banner banner banner banner'
     'tabs main main main main main main';
     background-color: rgb(30, 30, 30);
-    background-image: url('images/Cave.jpg');
+    background-image: url('/images/Cave.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
