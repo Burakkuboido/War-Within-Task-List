@@ -8,8 +8,16 @@
     <title>War Within Tasklist</title>
 </head>
 <body>
+
     <div class="grid-container">
-        <div class="banner"><h1>The War Within</h1></div>
+        <div class="banner">
+            <h1>The War Within</h1>
+            <div class="some">
+                <button class="uncheckAll" onclick="uncheckAll()">Uncheck All</button>
+                <br>
+                <button onclick="showButtons()"><i class="fa-solid fa-plus showButtons"></i></button>
+            </div>
+        </div>
         <div class="tabs">
             <button class="tab">Daily</button>
             <button class="tab">Weekly</button>
@@ -17,13 +25,11 @@
             <button class="tab">Instances</button>
             <button class="tab">Collections</button>
         </div>
-        <div class="main">
+        <div class="main hidden">
             <div class="containerTop hidden">
                 <h2 id="title"></h2>
-                <button class="uncheckAll" onclick="uncheckAll()">Uncheck All</button>
-                <button onclick="showButtons()"><i class="fa-solid fa-plus showButtons"></i></button>
-
             </div>
+            <p id="taskAmount"></p>
             <div class="containerBot noDisplay">
                 <button class="addCategory" onclick="addCat()">ADD CATEGORY</button>
                 <button class="addSubCat" onclick="addSubCat()">ADD SUB-CATEGORY</button>
@@ -35,8 +41,16 @@
             </div>
         </div>
     </div>
+   
 
-    </div>
+
+				<div class="bg-animation">
+					<div id='stars'></div>
+					<div id='stars2'></div>
+					<div id='stars3'></div>
+                </div>
+
+
     
 </body>
 <script src="script.js"></script>

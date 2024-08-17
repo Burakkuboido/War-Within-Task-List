@@ -279,3 +279,13 @@ function myfunc() {
             break;
       }
 }
+
+
+setInterval(getTasks, 100)
+function getTasks() {
+    var tasks = document.getElementsByTagName('li');
+    var taskAmount = document.getElementById("taskAmount");
+    var checked = document.getElementsByClassName("checked");
+
+    taskAmount.innerHTML = checked.length + " / " + tasks.length;
+}
